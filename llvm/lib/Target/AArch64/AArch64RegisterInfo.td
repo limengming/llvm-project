@@ -256,6 +256,7 @@ def CCR : RegisterClass<"AArch64", [i32], 32, (add NZCV)> {
 //===----------------------------------------------------------------------===//
 // Floating Point Scalar Registers
 //===----------------------------------------------------------------------===//
+//8-bit register
 
 def B0    : AArch64Reg<0,   "b0">, DwarfRegNum<[64]>;
 def B1    : AArch64Reg<1,   "b1">, DwarfRegNum<[65]>;
@@ -290,6 +291,7 @@ def B29   : AArch64Reg<29, "b29">, DwarfRegNum<[93]>;
 def B30   : AArch64Reg<30, "b30">, DwarfRegNum<[94]>;
 def B31   : AArch64Reg<31, "b31">, DwarfRegNum<[95]>;
 
+//16-bit register
 let SubRegIndices = [bsub] in {
 def H0    : AArch64Reg<0,   "h0", [B0]>, DwarfRegAlias<B0>;
 def H1    : AArch64Reg<1,   "h1", [B1]>, DwarfRegAlias<B1>;
@@ -325,6 +327,7 @@ def H30   : AArch64Reg<30, "h30", [B30]>, DwarfRegAlias<B30>;
 def H31   : AArch64Reg<31, "h31", [B31]>, DwarfRegAlias<B31>;
 }
 
+//32-bit register
 let SubRegIndices = [hsub] in {
 def S0    : AArch64Reg<0,   "s0", [H0]>, DwarfRegAlias<B0>;
 def S1    : AArch64Reg<1,   "s1", [H1]>, DwarfRegAlias<B1>;
@@ -360,6 +363,7 @@ def S30   : AArch64Reg<30, "s30", [H30]>, DwarfRegAlias<B30>;
 def S31   : AArch64Reg<31, "s31", [H31]>, DwarfRegAlias<B31>;
 }
 
+//64-bit register
 let SubRegIndices = [ssub], RegAltNameIndices = [vreg, vlist1] in {
 def D0    : AArch64Reg<0,   "d0", [S0], ["v0", ""]>, DwarfRegAlias<B0>;
 def D1    : AArch64Reg<1,   "d1", [S1], ["v1", ""]>, DwarfRegAlias<B1>;
@@ -395,6 +399,7 @@ def D30   : AArch64Reg<30, "d30", [S30], ["v30", ""]>, DwarfRegAlias<B30>;
 def D31   : AArch64Reg<31, "d31", [S31], ["v31", ""]>, DwarfRegAlias<B31>;
 }
 
+//128bit register
 let SubRegIndices = [dsub], RegAltNameIndices = [vreg, vlist1] in {
 def Q0    : AArch64Reg<0,   "q0", [D0], ["v0", ""]>, DwarfRegAlias<B0>;
 def Q1    : AArch64Reg<1,   "q1", [D1], ["v1", ""]>, DwarfRegAlias<B1>;
