@@ -96,8 +96,8 @@ def W27   : AArch64Reg<27, "w27">, DwarfRegNum<[27]>;
 def W28   : AArch64Reg<28, "w28">, DwarfRegNum<[28]>;
 def W29   : AArch64Reg<29, "w29">, DwarfRegNum<[29]>;
 def W30   : AArch64Reg<30, "w30">, DwarfRegNum<[30]>;
-def WSP   : AArch64Reg<31, "wsp">, DwarfRegNum<[31]>;
-def WZR   : AArch64Reg<31, "wzr">, DwarfRegAlias<WSP>;
+def WSP   : AArch64Reg<31, "wsp">, DwarfRegNum<[31]>; //stack pointer
+def WZR   : AArch64Reg<31, "wzr">, DwarfRegAlias<WSP>; //zero register
 
 let SubRegIndices = [sub_32] in {
 def X0    : AArch64Reg<0,   "x0",  [W0]>, DwarfRegAlias<W0>;
